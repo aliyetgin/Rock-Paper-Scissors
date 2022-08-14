@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+
+.rock, .paper, .scissors{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5em;
+}
+
+.score{
+    font-weight: bold;
+    font-size: 4em;
+}
+
+.announcement{
+    text-align: center;
+    font-size: 2em;
+}

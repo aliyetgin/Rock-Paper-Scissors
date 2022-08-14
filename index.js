@@ -61,8 +61,9 @@ function playRound(event){
             playerWinCount++;
         }
     }
-    isOver();
+   
     displayScore();
+    isOver();
 }
 
 const sc_div = document.getElementById("score-div");
@@ -70,6 +71,7 @@ const score = document.createElement("p");
 
 function displayScore(){
   score.textContent = `Score: you = ${playerWinCount} vs computer ${computerWinCount}`;
+  score.classList.add("score");
   sc_div.textConten = "";
   sc_div.appendChild(score);
 }
@@ -78,9 +80,15 @@ function isOver(){
     if(playerWinCount === 5 ||  computerWinCount === 5){
       buttons.forEach(btn => btn.removeEventListener("click", playRound));
 
-      const winner = playerWinCount === 5 ? "you" : "computer";
+      const winner = playerWinCount === 5 ? "You" : "Computer";
       const announcement = document.createElement("p");
       announcement.textContent = `${winner} won!!`;
-      div.appendChild(announcement);
+      if(winner === "You"){
+        announcement.style.color = "#5BB318";
+      } else {
+        announcement.style.color = "#FF1E00";
+      }
+      announcement.classList.add("announcement");
+      sc_div.appendChild(announcement);
     }
 }
